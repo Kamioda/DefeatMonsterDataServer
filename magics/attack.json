@@ -1,0 +1,68 @@
+{
+    "magics": [
+        {
+            "name": "ファイヤー",
+            "id": "amfire",
+            "mp": { "use": 4, "less": 100 },
+            "basepower": 50,
+            "element": "fire",
+            "effect": { "graphic": { "file": "fire.png", "blend": -1, "trans": true }, "sound": "fire.wav" },
+            "range": false
+        },
+        {
+            "name": "エクスプロージョン",
+            "id": "amexplosion",
+            "mp": { "use": 13, "less": 210 },
+            "basepower": 95,
+            "element": "normal",
+            "effect": { "graphic": { "file": "explosion.png", "blend": -1, "trans": true }, "sound": "explosion.mp3" },
+            "range": true
+        },
+        {
+            "name": "アイスクリスタル",
+            "id": "amice",
+            "mp": { "use": 7, "less": 170 },
+            "basepower": 75,
+            "element": "ice",
+            "effect": { "graphic": { "file": "ice.png", "blend": -1, "trans": true }, "sound": "ice.mp3" },
+            "range": false
+        },
+        {
+            "name": "アーススパイク",
+            "id": "amearth",
+            "mp": { "use": 8, "less": 190 },
+            "basepower": 80,
+            "element": "earth",
+            "effect": { "graphic": { "file": "earth.png", "blend": -1, "trans": true }, "sound": "earth_spike.mp3" },
+            "range": false
+        },
+        {
+            "name": "サンダーストーム",
+            "id": "amthunder",
+            "mp": { "use": 11, "less": 205 },
+            "basepower": 90,
+            "element": "thunder",
+            "effect": { "graphic": { "file": "thunder.png", "blend": -1, "trans": true }, "sound": "thunder.wav" },
+            "range": false
+        },
+        {
+            "name": "ストーム",
+            "id": "amstorm",
+            "mp": { "use": 16, "less": 200 },
+            "basepower": 100,
+            "element": "wind",
+            "effect": { "graphic": { "file": "wind.png", "blend": -1, "trans": true }, "sound": "wind.mp3" },
+            "range": false
+        },
+        {
+            "name": "メテオ",
+            "id": "ammeteo",
+            "mp": { "use": 75, "less": 75 },
+            "basepower": 250,
+            "element": "fire",
+            "effect": { "graphic": { "file": "meteo.png", "blend": -1, "trans": true }, "sound": "N/A" },
+            "range": true,
+            "allow": ["enemy"]
+        }
+    ]
+}

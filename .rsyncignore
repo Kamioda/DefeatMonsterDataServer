@@ -1,0 +1,10 @@
+.git/
+.github/
+magics/
+parameters/
+src/
+tests/
+.*ignore
+.*.json
+node_modules/
+tsconfig.json

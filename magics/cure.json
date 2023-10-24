@@ -1,0 +1,121 @@
+{
+    "magics": [
+        {
+            "name": "ヒール",
+            "id": "scmheal",
+            "mp": { "use": 2, "less": 30 },
+            "basepower": 30,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": false,
+            "resurrection": false
+        },
+        {
+            "name": "ケア",
+            "id": "scmcare",
+            "mp": { "use": 4, "less": 60 },
+            "basepower": 50,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": false,
+            "resurrection": false
+        },
+        {
+            "name": "ケアル",
+            "id": "scmcarel",
+            "mp": { "use": 7, "less": 120 },
+            "basepower": 100,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": false,
+            "resurrection": false
+        },
+        {
+            "name": "スーパーケアル",
+            "id": "scmscarel",
+            "mp": { "use": 15, "less": 180 },
+            "basepower": 140,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": false,
+            "resurrection": false
+        },
+        {
+            "name": "パーフェクトケアル",
+            "id": "scmperfect",
+            "mp": { "use": 20, "less": 270 },
+            "basepower": 9999,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": false,
+            "resurrection": false,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "リザレクション",
+            "id": "scmressurection",
+            "mp": { "use": 30, "less": 330 },
+            "basepower": 0,
+            "element": "shine",
+            "effect": { "graphic": { "file": "ressurection.png", "blend": 100, "trans": true }, "sound": "N/A" },
+            "range": false,
+            "resurrection": true,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "ヒーリング",
+            "id": "rcmheal",
+            "mp": { "use": 10, "less": 110 },
+            "basepower": 30,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": true,
+            "resurrection": false,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "ケアリング",
+            "id": "rcmcare",
+            "mp": { "use": 15, "less": 160 },
+            "basepower": 80,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": true,
+            "resurrection": false,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "ケアルリング",
+            "id": "rcmcarel",
+            "mp": { "use": 23, "less": 300 },
+            "basepower": 170,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": true,
+            "resurrection": false,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "パーフェクトケアルリング",
+            "id": "rcmperfect",
+            "mp": { "use": 33, "less": 370 },
+            "basepower": 9999,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": true,
+            "resurrection": false,
+            "allow": ["player", "partner"]
+        },
+        {
+            "name": "エクステンドケアルリング",
+            "id": "rcmexcarel",
+            "mp": { "use": 39, "less": 39 },
+            "basepower": 210,
+            "element": "shine",
+            "effect": { "graphic": { "file": "cure.png", "blend": -1, "trans": true }, "sound": "cure.mp3" },
+            "range": true,
+            "resurrection": true,
+            "allow": ["player"]
+        }
+    ]
+}
