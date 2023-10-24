@@ -43,5 +43,24 @@ jobs:
           remote_path: ${{ secrets.CONOHA_DEPLOY_PATH }}
           remote_port: ${{ secrets.CONOHA_SSH_PORT }}
           remote_host: meigetsu.jp
-          remote_user: Kamioda
+          remote_user: ${{ secrets.CONOHA_USER }}
           remote_key: ${{ secrets.DEPLOYSSHKEY }}
+  afterSetup:
+    name: Preparing for run on server
+    runs-on: ubuntu-20.04
+    needs: deployConoHa
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: SSH and Run Command
+        uses: appleboy/ssh-action@master
+        with:
+          host: meigetsu.jp
+          username: ${{ secrets.CONOHA_USER }}
+          key: ${{ secrets.DEPLOYSSHKEY }}
+          port: ${{ secrets.CONOHA_SSH_PORT }}
+          script: |
+            cd ${{ secrets.CONOHA_DEPLOY_PATH }}
+            Remove-Item -Recurse ./node_modules
+            npm install
