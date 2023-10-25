@@ -1,0 +1,32 @@
+{
+    "extends": ["eslint:recommended", "prettier"],
+    "plugins": ["jquery"],
+    "parserOptions": {
+        "sourceType": "script",
+        "ecmaVersion": 2020
+    },
+    "env": {
+        "node": false,
+        "es6": true,
+        "browser": true,
+        "jquery": true
+    },
+    "rules": {
+        "no-await-in-loop": "error",
+        "no-useless-escape": "error",
+        "no-constant-condition": ["error", { "checkLoops": false }],
+        "no-alert": "error",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "prefer-const": "error",
+        "eqeqeq": ["error", "always", { "null": "ignore" }],
+        "default-case": "error",
+        "array-callback-return": "error",
+        "require-atomic-updates": "error"
+    },
+    "globals": {
+        "toastr": "readonly",
+        "marked": "readonly",
+        "m": "readonly"
+    }
+}

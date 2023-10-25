@@ -1,0 +1,329 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "アンチ核家族化データサーバー",
+        "description": "アンチ核家族化のキャラクターデータ、魔法データ、リソースデータ用サーバー",
+        "version": "1.0.0",
+        "contact": {
+            "email": "defeatmonster@mail.kamioda.tokyo",
+            "name": "Kamioda",
+            "url": "https://www.kamioda.tokyo/"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://defeatmonster.kamioda.tokyo/",
+            "description": "Main Server"
+        }
+    ],
+    "paths": {
+        "/character/{CharacterType}": {
+            "get": {
+                "summary": "キャラクターキー一覧の取得",
+                "description": "アンチ核家族化のキャラクターのキー一覧を取得します",
+                "parameters": [
+                    {
+                        "name": "CharacterType",
+                        "in": "path",
+                        "description": "キーを取得するキャラクターの種別。player、partner、enemyのいずれかを指定する",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "partner"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "キャラクターキーの一覧をJSON形式で返す",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "characters": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "無効なキャラクターキーが指定されている"
+                    }
+                }
+            }
+        },
+        "/character/{CharacterType}/{CharacterID}": {
+            "get": {
+                "summary": "キャラクター情報の取得",
+                "description": "アンチ核家族化のキャラクターのステータスと使用可能な魔法を取得します。クエリパラメーターは、levelまたはexpのいずれかを必ず指定しなければいけない",
+                "parameters": [
+                    {
+                        "name": "CharacterType",
+                        "in": "path",
+                        "description": "キャラクターの種別。player、partner、enemyのいずれかを指定する",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "partner"
+                        }
+                    },
+                    {
+                        "name": "CharacterID",
+                        "in": "path",
+                        "description": "キャラクターのID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "mio"
+                        }
+                    },
+                    {
+                        "name": "level",
+                        "in": "query",
+                        "description": "キャラクターのレベル。1～100で指定する",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 10
+                        }
+                    },
+                    {
+                        "name": "exp",
+                        "in": "query",
+                        "description": "キャラクターが保持する経験値。0以上の値を指定する",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "example": 140
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "キャラクターの情報をJSON形式で返す",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "description": "キャラクターや戦闘スタイル（プレイヤー）の名前",
+                                            "type": "string"
+                                        },
+                                        "element": {
+                                            "description": "属性。必ず２個",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "parameters": {
+                                            "description": "キャラクターのパラメーター",
+                                            "type": "object",
+                                            "properties": {
+                                                "attack": {
+                                                    "description": "攻撃力",
+                                                    "type": "integer"
+                                                },
+                                                "cleverness": {
+                                                    "description": "賢さ",
+                                                    "type": "integer"
+                                                },
+                                                "defence": {
+                                                    "description": "守備力",
+                                                    "type": "integer"
+                                                },
+                                                "hp": {
+                                                    "description": "ＨＰ",
+                                                    "type": "integer"
+                                                },
+                                                "level": {
+                                                    "description": "レベル",
+                                                    "type": "integer"
+                                                },
+                                                "magicattack": {
+                                                    "description": "魔法攻撃力",
+                                                    "type": "integer"
+                                                },
+                                                "magiccure": {
+                                                    "description": "魔法回復力",
+                                                    "type": "integer"
+                                                },
+                                                "magicdefence": {
+                                                    "description": "魔法守備力",
+                                                    "type": "integer"
+                                                },
+                                                "mp": {
+                                                    "description": "ＭＰ",
+                                                    "type": "integer"
+                                                },
+                                                "speed": {
+                                                    "description": "素早さ",
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "magic": {
+                                            "description": "使用可能な魔法一覧",
+                                            "type": "object",
+                                            "properties": {
+                                                "attack": {
+                                                    "description": "攻撃魔法",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "name": {
+                                                                "description": "名前",
+                                                                "type": "string"
+                                                            },
+                                                            "mp": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "use": {
+                                                                        "description": "消費ＭＰ",
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "less": {
+                                                                        "description": "使用可能になる最小のＭＰ",
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "basepower": {
+                                                                "description": "基礎威力",
+                                                                "type": "integer"
+                                                            },
+                                                            "element": {
+                                                                "description": "属性",
+                                                                "type": "string"
+                                                            },
+                                                            "effect": {
+                                                                "description": "描画、音声再生等に関するコンフィグ",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "graphic": {
+                                                                        "description": "描画に関するコンフィグ",
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "file": {
+                                                                                "description": "画像ファイルの名前",
+                                                                                "type": "string"
+                                                                            },
+                                                                            "blend": {
+                                                                                "description": "描画のブレンドモード",
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "trans": {
+                                                                                "description": "画像の透過設定",
+                                                                                "type": "boolean"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "sound": {
+                                                                        "description": "音声ファイルの名前",
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "range": {
+                                                                "description": "範囲攻撃魔法であるか",
+                                                                "type": "boolean"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "cure": {
+                                                    "description": "回復魔法",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "name": {
+                                                                "description": "名前",
+                                                                "type": "string"
+                                                            },
+                                                            "mp": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "use": {
+                                                                        "description": "消費ＭＰ",
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "less": {
+                                                                        "description": "使用可能になる最小のＭＰ",
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "basepower": {
+                                                                "description": "基礎威力",
+                                                                "type": "integer"
+                                                            },
+                                                            "element": {
+                                                                "description": "属性",
+                                                                "type": "string"
+                                                            },
+                                                            "effect": {
+                                                                "description": "描画、音声再生等に関するコンフィグ",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "graphic": {
+                                                                        "description": "描画に関するコンフィグ",
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "file": {
+                                                                                "description": "画像ファイルの名前",
+                                                                                "type": "string"
+                                                                            },
+                                                                            "blend": {
+                                                                                "description": "描画のブレンドモード",
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "trans": {
+                                                                                "description": "画像の透過設定",
+                                                                                "type": "boolean"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "sound": {
+                                                                        "description": "音声ファイルの名前",
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "range": {
+                                                                "description": "範囲回復魔法であるか",
+                                                                "type": "boolean"
+                                                            },
+                                                            "resurrection": {
+                                                                "description": "蘇生効果の有無",
+                                                                "type": "boolean"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "クエリパラメーターに異常がある"
+                    },
+                    "404": {
+                        "description": "無効なキャラクター種別キー、キャラクターキーが指定されている"
+                    }
+                }
+            }
+        }
+    }
+}
