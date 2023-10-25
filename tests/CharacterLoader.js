@@ -11,7 +11,6 @@ const OKTestData = {
         attack: 144,
         cleverness: 328,
         defence: 1085,
-        exp: 36,
         hp: 1232,
         level: 18,
         magicattack: 151,

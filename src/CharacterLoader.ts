@@ -1,11 +1,10 @@
 import { existsSync, readFileSync } from 'fs';
 import { GetLevel } from './ExpCalculationManager.js';
 
-export interface CharacterStatus {
+export interface ResCharacterStatus {
     attack: number;
     cleverness: number;
     defence: number;
-    exp: number;
     hp: number;
     level: number;
     magicattack: number;
@@ -13,6 +12,10 @@ export interface CharacterStatus {
     magicdefence: number;
     mp: number;
     speed: number;
+}
+
+export interface CharacterStatus extends ResCharacterStatus {
+    exp?: number;
 }
 
 interface CharacterInformation {
@@ -24,7 +27,7 @@ interface CharacterInformation {
 export interface CharacterSearchResult {
     name: string;
     element: string[];
-    parameter: CharacterStatus;
+    parameter: ResCharacterStatus;
 }
 
 function InternalGetCharacter(
@@ -41,11 +44,13 @@ function InternalGetCharacter(
         const Level = GetLevelProcess(NumParameter, Data);
         const ParameterData = Data.params.find(i => i.level === Level);
         if (ParameterData === undefined) return null;
-        return {
+        const Res = {
             name: Data.name,
             element: Data.element,
             parameter: ParameterData,
         };
+        if (Res.parameter.exp) delete Res.parameter.exp;
+        return Res;
     }
     return null;
 }
@@ -54,10 +59,7 @@ export const GetCharacter = {
     FromExp: (CharacterID: string, CharacterType: string, Exp: number) => {
         return InternalGetCharacter(CharacterID, CharacterType, Exp, (Exp, Data) => {
             if (Data.params.some(i => i.exp == null)) return -1;
-            return GetLevel(
-                Exp,
-                Data.params.map(i => i.exp)
-            )
+            return GetLevel(Exp, Data.params.map(i => i.exp) as number[]);
         });
     },
     FromLevel: (CharacterID: string, CharacterType: string, Level: number) => {
