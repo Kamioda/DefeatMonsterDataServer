@@ -52,12 +52,13 @@ function InternalGetCharacter(
 
 export const GetCharacter = {
     FromExp: (CharacterID: string, CharacterType: string, Exp: number) => {
-        return InternalGetCharacter(CharacterID, CharacterType, Exp, (Exp, Data) =>
-            GetLevel(
+        return InternalGetCharacter(CharacterID, CharacterType, Exp, (Exp, Data) => {
+            if (Data.params.some(i => i.exp == null)) return -1;
+            return GetLevel(
                 Exp,
                 Data.params.map(i => i.exp)
             )
-        );
+        });
     },
     FromLevel: (CharacterID: string, CharacterType: string, Level: number) => {
         return InternalGetCharacter(CharacterID, CharacterType, Level, (lv: number) => lv);

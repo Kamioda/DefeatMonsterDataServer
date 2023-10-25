@@ -34,3 +34,7 @@ test('Character Loader Test/id error', t => {
 test('Character Loader Test/level error', t => {
     t.is(GetCharacter.FromLevel('ayaka', 'partner', 106), null);
 });
+
+test('Character Loader Test/no exp record', t => {
+    t.is(GetCharacter.FromExp('satan', 'enemy', 0), null);
+});

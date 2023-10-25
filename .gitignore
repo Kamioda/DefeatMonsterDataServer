@@ -139,3 +139,4 @@ parameters/*
 
 !parameters/partner/
 !parameters/player/
+!parameters/enemy/
