@@ -2,10 +2,12 @@ import express from 'express';
 import { CharacterSearchResult, GetCharacter } from './CharacterLoader.js';
 import { EnumCharacters, GetMagic } from './Enum.js';
 import { ValidCharacterType } from './CharacterType.js';
+import cors from 'cors';
 const NumReg = /^\d{1,}$/;
 
 export const server = () => {
     const app = express();
+    app.use(cors());
     app.get('/character/:character_type', (req, res) => {
         if (!ValidCharacterType(req.params.character_type)) return res.sendStatus(404);
         res.status(200).json({ characters: EnumCharacters(req.params.character_type) });
