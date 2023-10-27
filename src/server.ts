@@ -19,11 +19,17 @@ export const server = () => {
             CharacterGetter: (
                 CharacterID: string,
                 CharacterType: string,
-                NumParameter: number
+                NumParameter: number,
+                Gender?: string
             ) => CharacterSearchResult | null
         ) => {
             if (!NumReg.test(NumParam)) return res.sendStatus(400);
-            const CharacterInfo = CharacterGetter(req.params.key, req.params.character_type, parseInt(NumParam));
+            const CharacterInfo = CharacterGetter(
+                req.params.key,
+                req.params.character_type,
+                parseInt(NumParam),
+                req.query.gender == null ? undefined : (req.query.gender as string)
+            );
             if (CharacterInfo == null) return res.sendStatus(404);
             if (req.params.character_type === 'partner') {
                 const CharacterLv1Info = GetCharacter.FromLevel(req.params.key, 'partner', 1);

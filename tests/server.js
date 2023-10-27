@@ -39,16 +39,18 @@ test('Get character/from level/valid 2', async t => {
     const TargetCharacter = {
         id: 'balance',
         type: 'player',
+        gender: 'girl',
         level: 79,
     };
-    const Parameter = GetCharacter.FromLevel(TargetCharacter.id, TargetCharacter.type, TargetCharacter.level);
+    const Parameter = GetCharacter.FromLevel(TargetCharacter.id, TargetCharacter.type, TargetCharacter.level, TargetCharacter.gender);
+    if (Parameter == null) return t.fail();
     const Expect = {
         ...Parameter,
         magic: GetMagic(Parameter.parameter.mp, TargetCharacter.type),
     };
     const res = await request(server())
         .get(`/character/${TargetCharacter.type}/${TargetCharacter.id}`)
-        .query({ level: TargetCharacter.level })
+        .query({ level: TargetCharacter.level, gender: TargetCharacter.gender })
         .send();
     t.deepEqual(res.body, Expect);
 });
@@ -104,16 +106,18 @@ test('Get character/from exp/valid 2', async t => {
     const TargetCharacter = {
         id: 'balance',
         type: 'player',
+        gender: 'boy',
         exp: 1075,
     };
-    const Parameter = GetCharacter.FromExp(TargetCharacter.id, TargetCharacter.type, TargetCharacter.exp);
+    const Parameter = GetCharacter.FromExp(TargetCharacter.id, TargetCharacter.type, TargetCharacter.exp, TargetCharacter.gender);
+    if (Parameter == null) return t.fail();
     const Expect = {
         ...Parameter,
         magic: GetMagic(Parameter.parameter.mp, TargetCharacter.type),
     };
     const res = await request(server())
         .get(`/character/${TargetCharacter.type}/${TargetCharacter.id}`)
-        .query({ exp: TargetCharacter.exp })
+        .query({ exp: TargetCharacter.exp, gender: TargetCharacter.gender })
         .send();
     t.deepEqual(res.body, Expect);
 });

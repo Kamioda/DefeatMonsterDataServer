@@ -1,0 +1,37 @@
+{
+    "boy": {
+        "hp": 150,
+        "mp": 90,
+        "attack": 120,
+        "defence": 110,
+        "magicattack": 80,
+        "magicdefence": 90,
+        "magiccure": 85,
+        "speed": 105
+    },
+    "girl": {
+        "hp": 90,
+        "mp": 150,
+        "attack": 80,
+        "defence": 90,
+        "magicattack": 120,
+        "magicdefence": 110,
+        "magiccure": 110,
+        "speed": 95,
+        "cleverness": 110
+    },
+    "girlboy": {
+        "hp": 110,
+        "attack": 110,
+        "magiccure": 105
+    },
+    "guygirl": {
+        "hp": 120,
+        "mp": 110,
+        "defence": 110,
+        "magicattack": 110,
+        "magiccure": 95,
+        "speed": 105,
+        "cleverness": 90
+    }
+}
