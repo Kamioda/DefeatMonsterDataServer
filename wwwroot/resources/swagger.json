@@ -183,6 +183,10 @@
                                                                 "description": "名前",
                                                                 "type": "string"
                                                             },
+                                                            "id": {
+                                                                "description": "魔法のID",
+                                                                "type": "string"
+                                                            },
                                                             "mp": {
                                                                 "type": "object",
                                                                 "properties": {
@@ -247,6 +251,10 @@
                                                         "properties": {
                                                             "name": {
                                                                 "description": "名前",
+                                                                "type": "string"
+                                                            },
+                                                            "id": {
+                                                                "description": "魔法のID",
                                                                 "type": "string"
                                                             },
                                                             "mp": {
