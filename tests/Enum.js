@@ -2,10 +2,14 @@ import { EnumCharacters, GetMagic } from '../dist/Enum.js';
 import test from 'ava';
 
 test('Enum/partner characters', t => {
-    const Expected = ['ayaka', 'kotoha', 'misaki', 'miyuki'];
+    const Expected = [
+        { name: 'あやか', key: 'ayaka' },
+        { name: 'ことは', key: 'kotoha' },
+        { name: 'みさき', key: 'misaki' },
+        { name: 'みゆき', key: 'miyuki' },
+    ];
     const Result = EnumCharacters('partner');
-    Expected.forEach(i => t.true(Result.includes(i)));
-    Result.forEach(i => t.true(Expected.includes(i)));
+    t.deepEqual(Result, Expected);
 });
 
 test('Enum allowed magics', t => {

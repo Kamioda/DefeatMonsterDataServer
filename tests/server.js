@@ -6,7 +6,14 @@ import request from 'supertest';
 
 test('Get characters/ok', async t => {
     const res = await request(server()).get('/character/partner').send();
-    t.deepEqual(res.body, { characters: ['ayaka', 'kotoha', 'misaki', 'miyuki'] });
+    t.deepEqual(res.body, {
+        characters: [
+            { name: 'あやか', key: 'ayaka' },
+            { name: 'ことは', key: 'kotoha' },
+            { name: 'みさき', key: 'misaki' },
+            { name: 'みゆき', key: 'miyuki' },
+        ],
+    });
 });
 
 test('Get characters/no type', async t => {
@@ -42,7 +49,12 @@ test('Get character/from level/valid 2', async t => {
         gender: 'girl',
         level: 79,
     };
-    const Parameter = GetCharacter.FromLevel(TargetCharacter.id, TargetCharacter.type, TargetCharacter.level, TargetCharacter.gender);
+    const Parameter = GetCharacter.FromLevel(
+        TargetCharacter.id,
+        TargetCharacter.type,
+        TargetCharacter.level,
+        TargetCharacter.gender
+    );
     if (Parameter == null) return t.fail();
     const Expect = {
         ...Parameter,
@@ -109,7 +121,12 @@ test('Get character/from exp/valid 2', async t => {
         gender: 'boy',
         exp: 1075,
     };
-    const Parameter = GetCharacter.FromExp(TargetCharacter.id, TargetCharacter.type, TargetCharacter.exp, TargetCharacter.gender);
+    const Parameter = GetCharacter.FromExp(
+        TargetCharacter.id,
+        TargetCharacter.type,
+        TargetCharacter.exp,
+        TargetCharacter.gender
+    );
     if (Parameter == null) return t.fail();
     const Expect = {
         ...Parameter,

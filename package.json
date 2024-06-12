@@ -13,6 +13,7 @@
     "eslint:fix": "eslint --cache --ext .js,.ts . --fix",
     "coverage": "c8 npm test",
     "ci": "run-p eslint coverage",
+    "pretest": "tsc",
     "test": "ava --verbose tests/",
     "start": "node dist/server.js",
     "build": "tsc"
@@ -21,7 +22,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "nodeeasyfileio": "^1.0.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

@@ -20,7 +20,7 @@
         "/character/{CharacterType}": {
             "get": {
                 "summary": "キャラクターキー一覧の取得",
-                "description": "アンチ核家族化のキャラクターのキー一覧を取得します",
+                "description": "アンチ核家族化のキャラクターの名前とキー一覧を取得します",
                 "parameters": [
                     {
                         "name": "CharacterType",
@@ -35,7 +35,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "キャラクターキーの一覧をJSON形式で返す",
+                        "description": "キャラクターの一覧をJSON形式で返す",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -44,7 +44,17 @@
                                         "characters": {
                                             "type": "array",
                                             "items": {
-                                                "type": "string"
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "description": "キャラクターや戦闘スタイル（プレイヤー）の名前",
+                                                        "type": "string"
+                                                    },
+                                                    "key": {
+                                                        "description": "キャラクターのキー",
+                                                        "type": "string"
+                                                    }
+                                                }
                                             }
                                         }
                                     }
