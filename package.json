@@ -15,8 +15,16 @@
     "ci": "run-p eslint coverage",
     "pretest": "tsc",
     "test": "ava --verbose tests/",
+    "posttest": "run-script-os",
+    "posttest:win32": "rmdir /s /q dist",
+    "posttest:default": "rm -rf dist/",
     "start": "node dist/server.js",
-    "build": "tsc"
+    "prepack": "tsc",
+    "postpack": "run-script-os",
+    "postpack:win32": "rmdir /s /q dist",
+    "postpack:default": "rm -rf dist/",
+    "build": "tsc",
+    "prepublish": "echo \"This package cannot be published.\" && exit 1"
   },
   "author": "Kamioda",
   "license": "UNLICENSED",
@@ -39,6 +47,7 @@
     "eslint-plugin-node": "^11.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.2",
+    "run-script-os": "^1.1.6",
     "supertest": "^6.3.4",
     "typescript": "^5.4.5"
   }
