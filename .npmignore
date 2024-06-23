@@ -141,3 +141,4 @@ tsconfig.json
 *.js.map
 parameters/
 magics/
+wwwroot/

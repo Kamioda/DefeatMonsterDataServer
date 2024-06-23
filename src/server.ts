@@ -43,7 +43,7 @@ export const server = () => {
         else if (req.query.exp) Loader(req.query.exp as string, GetCharacter.FromExp);
         else return res.sendStatus(400);
     });
-    app.use(express.static('./wwwroot'));
+    app.use(express.static('./files'));
     return app;
 };
 
