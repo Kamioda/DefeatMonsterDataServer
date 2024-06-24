@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "Одиночная игра",
+        "multi_play": "Многопользовательская игра",
+        "normal_battle": "Обычный режим битвы",
+        "continuous_subjugation": "Непрерывный режим подчинения",
+        "time_attack": "Режим временной атаки",
+        "end_game": "Завершить игру"
+    },
+    "setup": {
+        "name": "Имя",
+        "battle_style": "Стиль битвы",
+        "gender": {
+            "label": "Пол",
+            "boy": "Мальчик",
+            "girl": "Девочка",
+            "girlboy": "Девочка-мальчик",
+            "guygirl": "Мужественная девочка"
+        },
+        "engage": "Участвовать",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "Атака",
+            "defense": "Защита",
+            "magic_attack": "Магическая атака",
+            "magic_defense": "Магическая защита",
+            "magic_cure": "Магическое лечение",
+            "speed": "Скорость",
+            "cleverness": "Ум",
+            "element": "Элемент"
+        },
+        "strategy": "Стратегия"
+    },
+    "battle": {
+        "appearance": "{CharacterName} появился!",
+        "command": {
+            "normal": "Атака",
+            "magic": "Магия",
+            "skill": "Навык",
+            "defense": "Защита",
+            "engage": "Участвовать"
+        },
+        "attack": {
+            "normal": "{CharacterName} атаковал!",
+            "magic": "{CharacterName} использовал {MagicName}!"
+        },
+        "damage": {
+            "enemy": "{CharacterName} получил {Damage} урона!",
+            "player": {
+                "single": "{CharacterName} получил {Damage} урона!",
+                "multiple": "{CharacterName} и другие получили в среднем {Damage} урона!"
+            },
+            "cure": {
+                "single": "{CharacterName} восстановил {Cure}!",
+                "multiple": "{CharacterName} и другие восстановили в среднем {Cure}!"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName} был побежден!",
+                "multiple": "{CharacterName} и другие были побеждены!"
+            },
+            "player": {
+                "single": "{CharacterName} был побежден!",
+                "multiple": "{CharacterName} и другие были побеждены!"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName} победил!",
+        "lose": "{CharacterName} и другие были уничтожены..."
+    }
+}

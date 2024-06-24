@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "单人游戏",
+        "multi_play": "多人游戏",
+        "normal_battle": "普通战斗模式",
+        "continuous_subjugation": "连续征服模式",
+        "time_attack": "计时攻击模式",
+        "end_game": "结束游戏"
+    },
+    "setup": {
+        "name": "名字",
+        "battle_style": "战斗风格",
+        "gender": {
+            "label": "性别",
+            "boy": "男孩",
+            "girl": "女孩",
+            "girlboy": "少女男孩",
+            "guygirl": "有男子气概的女孩"
+        },
+        "engage": "参与",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "攻击力",
+            "defense": "防御力",
+            "magic_attack": "魔法攻击力",
+            "magic_defense": "魔法防御力",
+            "magic_cure": "魔法治愈力",
+            "speed": "速度",
+            "cleverness": "聪明度",
+            "element": "元素"
+        },
+        "strategy": "策略"
+    },
+    "battle": {
+        "appearance": "{CharacterName}出现了！",
+        "command": {
+            "normal": "攻击",
+            "magic": "魔法",
+            "skill": "技能",
+            "defense": "防御",
+            "engage": "参与"
+        },
+        "attack": {
+            "normal": "{CharacterName}攻击了！",
+            "magic": "{CharacterName}施放了{MagicName}！"
+        },
+        "damage": {
+            "enemy": "{CharacterName}受到了{Damage}点伤害！",
+            "player": {
+                "single": "{CharacterName}受到了{Damage}点伤害！",
+                "multiple": "{CharacterName}和其他人受到了平均{Damage}点伤害！"
+            },
+            "cure": {
+                "single": "{CharacterName}恢复了{Cure}！",
+                "multiple": "{CharacterName}和其他人平均恢复了{Cure}！"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName}被击败了！",
+                "multiple": "{CharacterName}和其他人被击败了！"
+            },
+            "player": {
+                "single": "{CharacterName}被击败了！",
+                "multiple": "{CharacterName}和其他人被击败了！"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName}赢了！",
+        "lose": "{CharacterName}和其他人被消灭了..."
+    }
+}

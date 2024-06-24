@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "シングルプレイ",
+        "multi_play": "マルチプレイ",
+        "normal_battle": "通常バトルモード",
+        "continuous_subjugation": "連続討伐モード",
+        "time_attack": "タイムアタックモード",
+        "end_game": "終了"
+    },
+    "setup": {
+        "name": "名前",
+        "battle_style": "戦闘スタイル",
+        "gender": {
+            "label": "性別",
+            "boy": "男性",
+            "girl": "女性",
+            "girlboy": "男の娘",
+            "guygirl": "漢女"
+        },
+        "engage": "エンゲージ",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "攻撃力",
+            "defense": "守備力",
+            "magic_attack": "魔法攻撃力",
+            "magic_defense": "魔法守備力",
+            "magic_cure": "魔法回復力",
+            "speed": "素早さ",
+            "cleverness": "賢さ",
+            "element": "タイプ"
+        },
+        "strategy": "作戦"
+    },
+    "battle": {
+        "appearance": "{CharacterName}が現れた！",
+        "command": {
+            "normal": "攻撃",
+            "magic": "魔法",
+            "skill": "特技",
+            "defense": "防御",
+            "engage": "エンゲージ"
+        },
+        "attack": {
+            "normal": "{CharacterName}の攻撃！",
+            "magic": "{CharacterName}は{MagicName}を唱えた！"
+        },
+        "damage": {
+            "enemy": "{CharacterName}に{Damage}のダメージ！",
+            "player": {
+                "single": "{CharacterName}は{Damage}のダメージを受けた！",
+                "multiple": "{CharacterName}たちは平均{Damage}のダメージを受けた！"
+            },
+            "cure": {
+                "single": "{CharacterName}は{Cure}回復した！",
+                "multiple": "{CharacterName}たちは平均{Cure}回復した！"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName}を倒した！",
+                "multiple": "{CharacterName}たちを倒した！"
+            },
+            "player":  {
+                "single": "{CharacterName}は死んでしまった！",
+                "multiple": "{CharacterName}たちは全滅した！"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName}たちの勝利！",
+        "lose": "{CharacterName}たちは全滅した..."
+    }
+}

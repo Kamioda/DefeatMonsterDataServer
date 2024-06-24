@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "Einzelspiel",
+        "multi_play": "Mehrspieler-Spiel",
+        "normal_battle": "Normaler Kampfmodus",
+        "continuous_subjugation": "Kontinuierlicher Unterwerfungsmodus",
+        "time_attack": "Zeitangriffsmodus",
+        "end_game": "Spiel beenden"
+    },
+    "setup": {
+        "name": "Name",
+        "battle_style": "Kampfstil",
+        "gender": {
+            "label": "Geschlecht",
+            "boy": "Junge",
+            "girl": "Mädchen",
+            "girlboy": "Mädchenhafter Junge",
+            "guygirl": "Männliches Mädchen"
+        },
+        "engage": "Engagieren",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "Angriff",
+            "defense": "Verteidigung",
+            "magic_attack": "Magieangriff",
+            "magic_defense": "Magische Verteidigung",
+            "magic_cure": "Magische Heilung",
+            "speed": "Geschwindigkeit",
+            "cleverness": "Klugheit",
+            "element": "Element"
+        },
+        "strategy": "Strategie"
+    },
+    "battle": {
+        "appearance": "{CharacterName} erschien!",
+        "command": {
+            "normal": "Angriff",
+            "magic": "Magie",
+            "skill": "Fähigkeit",
+            "defense": "Verteidigung",
+            "engage": "Engagieren"
+        },
+        "attack": {
+            "normal": "{CharacterName} griff an!",
+            "magic": "{CharacterName} hat {MagicName} gewirkt!"
+        },
+        "damage": {
+            "enemy": "{CharacterName} hat {Damage} Schaden genommen!",
+            "player": {
+                "single": "{CharacterName} hat {Damage} Schaden genommen!",
+                "multiple": "{CharacterName} und andere haben durchschnittlich {Damage} Schaden genommen!"
+            },
+            "cure": {
+                "single": "{CharacterName} hat {Cure} geheilt!",
+                "multiple": "{CharacterName} und andere haben durchschnittlich {Cure} geheilt!"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName} wurde besiegt!",
+                "multiple": "{CharacterName} und andere wurden besiegt!"
+            },
+            "player": {
+                "single": "{CharacterName} wurde besiegt!",
+                "multiple": "{CharacterName} und andere wurden besiegt!"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName} hat gewonnen!",
+        "lose": "{CharacterName} und andere wurden ausgelöscht..."
+    }
+}

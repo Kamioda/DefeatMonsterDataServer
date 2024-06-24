@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "Jugada individual",
+        "multi_play": "Jugada múltiple",
+        "normal_battle": "Modo de batalla normal",
+        "continuous_subjugation": "Modo de subyugación continua",
+        "time_attack": "Modo de ataque de tiempo",
+        "end_game": "Fin del juego"
+    },
+    "setup": {
+        "name": "Nombre",
+        "battle_style": "Estilo de batalla",
+        "gender": {
+            "label": "Género",
+            "boy": "Chico",
+            "girl": "Chica",
+            "girlboy": "Chico Femenino",
+            "guygirl": "Chica Masculina"
+        },
+        "engage": "Participar",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "Ataque",
+            "defense": "Defensa",
+            "magic_attack": "Ataque Mágico",
+            "magic_defense": "Defensa Mágica",
+            "magic_cure": "Cura Mágica",
+            "speed": "Velocidad",
+            "cleverness": "Inteligencia",
+            "element": "Elemento"
+        },
+        "strategy": "Estrategia"
+    },
+    "battle": {
+        "appearance": "¡{CharacterName} apareció!",
+        "command": {
+            "normal": "Ataque",
+            "magic": "Magia",
+            "skill": "Habilidad",
+            "defense": "Defensa",
+            "engage": "Participar"
+        },
+        "attack": {
+            "normal": "¡{CharacterName} atacó!",
+            "magic": "¡{CharacterName} lanzó {MagicName}!"
+        },
+        "damage": {
+            "enemy": "¡{CharacterName} recibió {Damage} de daño!",
+            "player": {
+                "single": "¡{CharacterName} recibió {Damage} de daño!",
+                "multiple": "¡{CharacterName} y otros recibieron un promedio de {Damage} de daño!"
+            },
+            "cure": {
+                "single": "¡{CharacterName} recuperó {Cure}!",
+                "multiple": "¡{CharacterName} y otros recuperaron un promedio de {Cure}!"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "¡{CharacterName} fue derrotado!",
+                "multiple": "¡{CharacterName} y otros fueron derrotados!"
+            },
+            "player": {
+                "single": "¡{CharacterName} fue derrotado!",
+                "multiple": "¡{CharacterName} y otros fueron derrotados!"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName} won!",
+        "lose": "{CharacterName} and others were wiped out..."
+    }
+}

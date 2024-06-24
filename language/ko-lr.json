@@ -1,0 +1,74 @@
+{
+    "main_menu": {
+        "single_play": "싱글플레이",
+        "multi_play": "멀티플레이",
+        "normal_battle": "일반전투모드",
+        "continuous_subjugation": "연속정복모드",
+        "time_attack": "시간공격모드",
+        "end_game": "게임종료"
+    },
+    "setup": {
+        "name": "이름",
+        "battle_style": "전투스타일",
+        "gender": {
+            "label": "성별",
+            "boy": "소년",
+            "girl": "소녀",
+            "girlboy": "소년미녀",
+            "guygirl": "남자소녀"
+        },
+        "engage": "참여",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "공격력",
+            "defense": "방어력",
+            "magic_attack": "마법공격력",
+            "magic_defense": "마법방어력",
+            "magic_cure": "마법치유력",
+            "speed": "속도",
+            "cleverness": "지능",
+            "element": "속성"
+        },
+        "strategy": "전략"
+    },
+    "battle": {
+        "appearance": "{CharacterName}이(가) 나타났습니다!",
+        "command": {
+            "normal": "공격",
+            "magic": "마법",
+            "skill": "기술",
+            "defense": "방어",
+            "engage": "참여"
+        },
+        "attack": {
+            "normal": "{CharacterName}이(가) 공격했습니다!",
+            "magic": "{CharacterName}이(가) {MagicName}을(를) 시전했습니다!"
+        },
+        "damage": {
+            "enemy": "{CharacterName}이(가) {Damage}의 피해를 입었습니다!",
+            "player": {
+                "single": "{CharacterName}이(가) {Damage}의 피해를 입었습니다!",
+                "multiple": "{CharacterName}과(와) 다른 사람들이 평균 {Damage}의 피해를 입었습니다!"
+            },
+            "cure": {
+                "single": "{CharacterName}이(가) {Cure}을(를) 회복했습니다!",
+                "multiple": "{CharacterName}과(와) 다른 사람들이 평균 {Cure}을(를) 회복했습니다!"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName}이(가) 패배했습니다!",
+                "multiple": "{CharacterName}과(와) 다른 사람들이 패배했습니다!"
+            },
+            "player": {
+                "single": "{CharacterName}이(가) 패배했습니다!",
+                "multiple": "{CharacterName}과(와) 다른 사람들이 패배했습니다!"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName}이(가) 승리했습니다!",
+        "lose": "{CharacterName}과(와) 다른 사람들이 모두 전멸했습니다..."
+    }
+}

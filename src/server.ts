@@ -3,11 +3,18 @@ import { CharacterSearchResult, GetCharacter } from './CharacterLoader.js';
 import { EnumCharacters, GetMagic } from './Enum.js';
 import { ValidCharacterType } from './CharacterType.js';
 import cors from 'cors';
+import { existsSync } from 'node:fs';
 const NumReg = /^\d{1,}$/;
 
 export const server = () => {
     const app = express();
     app.use(cors());
+    app.get('/language', (req, res) => {
+        if (req.query.lang == null) return res.sendStatus(404);
+        const lang = req.query.lang as string;
+        if (!existsSync(`./language/${lang}.json`)) return res.sendStatus(404);
+        res.sendFile(`./language/${lang}.json`);
+    });
     app.get('/character/:character_type', (req, res) => {
         if (!ValidCharacterType(req.params.character_type)) return res.sendStatus(404);
         res.status(200).json({ characters: EnumCharacters(req.params.character_type) });

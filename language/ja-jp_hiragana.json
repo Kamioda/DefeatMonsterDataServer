@@ -1,0 +1,75 @@
+{
+    "main_menu": {
+        "single_play": "シングルプレイ",
+        "multi_play": "マルチプレイ",
+        "normal_battle": "つうじょうバトルモード",
+        "continuous_subjugation": "れんぞくとうばつモード",
+        "time_attack": "タイムアタックモード",
+        "end_game": "おわり"
+    },
+    "setup": {
+        "name": "なまえ",
+        "battle_style": "たたかいかた",
+        "gender": {
+            "label": "せいべつ",
+            "boy": "おとこのこ",
+            "girl": "おんなのこ",
+            "girlboy": "おんなのこっぽいおとこのこ",
+            "guygirl": "おとこのこっぽいおんなのこ"
+        },
+        "engage": "エンゲージ",
+        "parameter": {
+            "hp": "HP",
+            "mp": "MP",
+            "attack": "こうげきりょく",
+            "defense": "しゅびりょく",
+            "magic_attack": "まほうこうげきりょく",
+            "magic_defense": "まほうしゅびりょく",
+            "magic_cure": "まほうかいふくりょく",
+            "speed": "すばやさ",
+            "cleverness": "かしこさ",
+            "element": "タイプ"
+        },
+        "strategy": "さくせん"
+    },
+    "battle": {
+        "appearance": "{CharacterName}があらわれた！",
+        "command": {
+            "normal": "こうげき",
+            "magic": "まほう",
+            "skill": "とくぎ",
+            "defense": "ぼうぎょ",
+            "engage": "エンゲージ"
+        },
+        "attack": {
+            "normal": "{CharacterName}のこうげき！",
+            "magic": "{CharacterName}は{MagicName}をとなえた！"
+        },
+        "damage": {
+            "enemy": "{CharacterName}に{Damage}のダメージ！",
+            "player": {
+                "single": "{CharacterName}は{Damage}のダメージをうけた！",
+                "multiple": "{CharacterName}たちはへいきん{Damage}のダメージをうけた！"
+            },
+            "cure": {
+                "single": "{CharacterName}は{Cure}かいふくした！",
+                "multiple": "{CharacterName}たちはへいきん{Cure}かいふくした！"
+            }
+        },
+        "defeat": {
+            "enemy": {
+                "single": "{CharacterName}をたおした！",
+                "multiple": "{CharacterName}たちをたおした！"
+            
+            },
+            "player":  {
+                "single": "{CharacterName}はしんでしまった！",
+                "multiple": "{CharacterName}たちはしんでしまった！"
+            }
+        }
+    },
+    "result": {
+        "win": "{CharacterName}たちのかち！",
+        "lose": "{CharacterName}たちはぜんめつした..."
+    }
+}
