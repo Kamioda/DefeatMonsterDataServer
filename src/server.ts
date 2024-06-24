@@ -3,12 +3,23 @@ import { CharacterSearchResult, GetCharacter } from './CharacterLoader.js';
 import { EnumCharacters, GetMagic } from './Enum.js';
 import { ValidCharacterType } from './CharacterType.js';
 import cors from 'cors';
-import { existsSync } from 'node:fs';
+import { appendFileSync, existsSync } from 'node:fs';
 const NumReg = /^\d{1,}$/;
 
 export const server = () => {
     const app = express();
     app.use(cors());
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    app.use((err, req, res, next) => {
+        // ここでエラーを処理する
+        console.error(err.stack); // エラーをコンソールに出力するなど
+
+        appendFileSync('./error.log', `${new Date().toLocaleString()} - ${req.path} ${err.message}\n`);
+
+        // クライアントにエラーレスポンスを返す
+        return res.sendStatus(500);
+    });
     app.get('/language', (req, res) => {
         if (req.query.lang == null) return res.sendStatus(404);
         const lang = req.query.lang as string;
