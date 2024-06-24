@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { basename, join, parse } from 'node:path';
 import { readJson } from 'nodeeasyfileio';
 
-export function EnumCharacters(CharacterType: string): { name: string, key: string }[] {
+export function EnumCharacters(CharacterType: string): { name: string; key: string }[] {
     const CharacterDataDir = `./parameters/${CharacterType}/`;
     const Files = readdirSync(CharacterDataDir).map(i => join(CharacterDataDir, i));
     return Files.filter(i => {
@@ -12,8 +12,8 @@ export function EnumCharacters(CharacterType: string): { name: string, key: stri
         const CharacterProfile = readJson(i);
         return {
             name: CharacterProfile['name'],
-            key: basename(i, '.json')
-        }
+            key: basename(i, '.json'),
+        };
     });
 }
 

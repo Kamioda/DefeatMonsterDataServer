@@ -60,9 +60,8 @@
             "enemy": {
                 "single": "{CharacterName}をたおした！",
                 "multiple": "{CharacterName}たちをたおした！"
-            
             },
-            "player":  {
+            "player": {
                 "single": "{CharacterName}はしんでしまった！",
                 "multiple": "{CharacterName}たちはしんでしまった！"
             }

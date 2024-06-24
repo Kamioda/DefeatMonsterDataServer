@@ -61,7 +61,7 @@
                 "single": "{CharacterName}を倒した！",
                 "multiple": "{CharacterName}たちを倒した！"
             },
-            "player":  {
+            "player": {
                 "single": "{CharacterName}は死んでしまった！",
                 "multiple": "{CharacterName}たちは全滅した！"
             }
