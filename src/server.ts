@@ -54,4 +54,4 @@ export const server = () => {
     return app;
 };
 
-server().listen(process.env.HTTP_PLATFORM_PORT || 42000);
+server().listen(process.env.HTTP_PLATFORM_PORT || 11400);
