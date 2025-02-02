@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { ResCharacterStatus, CharacterBaseStatus } from './CharacterLoader.js';
 
-interface CharacterMagnificationInformation {
+type CharacterMagnificationInformation = {
     boy: Partial<CharacterBaseStatus>;
     girl: Partial<CharacterBaseStatus>;
     boygirl: Partial<CharacterBaseStatus>;

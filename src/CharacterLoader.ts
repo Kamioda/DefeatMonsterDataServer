@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'fs';
 import { GetLevel } from './ExpCalculationManager.js';
 import { AdjustByGender } from './GenderMagnification.js';
 
-export interface CharacterBaseStatus {
+export type CharacterBaseStatus = {
     attack: number;
     cleverness: number;
     defence: number;
@@ -14,21 +14,21 @@ export interface CharacterBaseStatus {
     speed: number;
 }
 
-export interface ResCharacterStatus extends CharacterBaseStatus {
+export type ResCharacterStatus = CharacterBaseStatus & {
     level: number;
 }
 
-export interface CharacterStatus extends ResCharacterStatus {
+export type CharacterStatus = ResCharacterStatus & {
     exp?: number;
 }
 
-interface CharacterInformation {
+type CharacterInformation = {
     name: string;
     element: string[];
     params: CharacterStatus[];
 }
 
-export interface CharacterSearchResult {
+export type CharacterSearchResult = {
     name: string;
     element: string[];
     parameter: ResCharacterStatus;

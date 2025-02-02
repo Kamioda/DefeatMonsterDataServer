@@ -17,7 +17,7 @@ export function EnumCharacters(CharacterType: string): { name: string; key: stri
     });
 }
 
-export interface Magic {
+export type Magic = {
     name: string;
     id: string;
     mp: {
@@ -38,7 +38,7 @@ export interface Magic {
     allow?: string[];
 }
 
-interface MagicDataFile {
+type MagicDataFile = {
     magics: Magic[];
 }
 
