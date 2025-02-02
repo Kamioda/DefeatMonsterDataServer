@@ -1,7 +1,8 @@
 import { GetCharacter } from '../dist/CharacterLoader.js';
 import { CreateExpList } from '../dist/ExpCalculationManager.js';
 import test from 'ava';
-import ayaka from '../parameters/partner/ayaka.json' assert { type: 'json' };
+import { readJson } from 'nodeeasyfileio';
+const ayaka = readJson('./parameters/partner/ayaka.json');
 const expTable = CreateExpList(ayaka.params.map(i => i.exp));
 
 const OKTestData = {

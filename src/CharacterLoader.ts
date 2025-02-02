@@ -1,6 +1,7 @@
-import { existsSync, readFileSync } from 'fs';
+import { existsSync } from 'fs';
 import { GetLevel } from './ExpCalculationManager.js';
 import { AdjustByGender } from './GenderMagnification.js';
+import { readJson } from 'nodeeasyfileio';
 
 export type CharacterBaseStatus = {
     attack: number;
@@ -45,7 +46,7 @@ function InternalGetCharacter(
 ): CharacterSearchResult | null {
     const FilePath = `./parameters/${CharacterType}/${CharacterID}.json`;
     if (existsSync(FilePath)) {
-        const Data: CharacterInformation = JSON.parse(readFileSync(FilePath, 'utf-8')) as CharacterInformation;
+        const Data: CharacterInformation = readJson<CharacterInformation>(FilePath);
         const Level = GetLevelProcess(NumParameter, Data);
         let ParameterData = Data.params.find(i => i.level === Level);
         if (ParameterData === undefined) return null;

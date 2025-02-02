@@ -1,6 +1,7 @@
 import { GetLevel, CreateExpList, InternalGetLevel } from '../dist/ExpCalculationManager.js';
 import test from 'ava';
-import ayaka from '../parameters/partner/ayaka.json' assert { type: 'json' };
+import { readJson } from 'nodeeasyfileio';
+const ayaka = readJson('./parameters/partner/ayaka.json');
 const expTable = ayaka.params.map(i => i.exp);
 
 test('Create Exp list test', t => {
@@ -32,7 +33,6 @@ test('Exp calculation test/over', t => {
 });
 
 test('Exp calculation test/on border', t => {
-    console.log(expTable[10]);
     t.is(GetLevel(CreateExpList(expTable)[10], expTable), 11);
 });
 

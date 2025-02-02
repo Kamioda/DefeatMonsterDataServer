@@ -1,6 +1,7 @@
-import mg from '../parameters/magnification.json' assert { type: 'json' };
 import { AdjustByGender } from '../dist/GenderMagnification.js';
 import test from 'ava';
+import { readJson } from 'nodeeasyfileio';
+const mg = readJson('./parameters/magnification.json');
 
 test('magnification test/gender ok', t => {
     const Parameter = {
