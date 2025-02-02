@@ -30,7 +30,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "nodeeasyfileio": "^1.0.2"
+    "nodeeasyfileio": "^1.0.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
