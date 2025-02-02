@@ -1,4 +1,4 @@
-import { server } from '../dist/server.js';
+import { APIServer as server } from '../dist/server.js';
 import { GetMagic } from '../dist/Enum.js';
 import { GetCharacter } from '../dist/CharacterLoader.js';
 import test from 'ava';

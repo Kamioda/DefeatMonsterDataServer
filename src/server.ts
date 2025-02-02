@@ -6,7 +6,7 @@ import cors from 'cors';
 import { appendFileSync, existsSync } from 'node:fs';
 const NumReg = /^\d{1,}$/;
 
-export const server = () => {
+export const APIServer = () => {
     const app = express();
     app.use(cors());
 
@@ -61,8 +61,10 @@ export const server = () => {
         else if (req.query.exp) Loader(req.query.exp as string, GetCharacter.FromExp);
         else return res.sendStatus(400);
     });
-    app.use(express.static('./files'));
     return app;
 };
 
-server().listen(process.env.HTTP_PLATFORM_PORT || 11400);
+const server = express();
+server.use('/api/v1', APIServer());
+server.use(express.static('./wwwroot'));
+server.listen(process.env.HTTP_PLATFORM_PORT || 11400);
