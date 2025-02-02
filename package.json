@@ -23,8 +23,7 @@
     "postpack": "run-script-os",
     "postpack:win32": "rmdir /s /q dist",
     "postpack:default": "rm -rf dist/",
-    "build": "tsc",
-    "prepublish": "echo \"This package cannot be published.\" && exit 1"
+    "build": "tsc"
   },
   "author": "Kamioda",
   "license": "UNLICENSED",
