@@ -1190,6 +1190,17 @@
             "speed": 247,
             "level": 99
         },
-        { "level": 100 }
+        {
+            "attack": 553,
+            "clever": 401,
+            "defence": 493,
+            "hp": 27960,
+            "magicattack": 541,
+            "magiccure": 353,
+            "magicdefence": 495,
+            "mp": 1738,
+            "speed": 249,
+            "level": 100
+        }
     ]
 }
