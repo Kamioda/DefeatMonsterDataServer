@@ -1,0 +1,23 @@
+div {
+    margin-bottom: 1em;
+}
+
+#target_selector label {
+    min-width: 100px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#target_selector select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#parameter_view th {
+    min-width: 100px;
+}
+
+#parameter_view section {
+    margin-bottom: 0.5em;
+}
