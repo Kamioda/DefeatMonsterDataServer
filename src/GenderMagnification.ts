@@ -6,7 +6,7 @@ type CharacterMagnificationInformation = {
     girl: Partial<CharacterBaseStatus>;
     boygirl: Partial<CharacterBaseStatus>;
     guygirl: Partial<CharacterBaseStatus>;
-}
+};
 
 export function AdjustByGender(Gender: string, BaseParam: ResCharacterStatus): ResCharacterStatus {
     const AllMagnificationData: CharacterMagnificationInformation = JSON.parse(

@@ -13,27 +13,27 @@ export type CharacterBaseStatus = {
     magicdefence: number;
     mp: number;
     speed: number;
-}
+};
 
 export type ResCharacterStatus = CharacterBaseStatus & {
     level: number;
-}
+};
 
 export type CharacterStatus = ResCharacterStatus & {
     exp?: number;
-}
+};
 
 type CharacterInformation = {
     name: string;
     element: string[];
     params: CharacterStatus[];
-}
+};
 
 export type CharacterSearchResult = {
     name: string;
     element: string[];
     parameter: ResCharacterStatus;
-}
+};
 
 function InternalGetCharacter(
     CharacterID: string,

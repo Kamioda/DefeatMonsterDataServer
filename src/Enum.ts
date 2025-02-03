@@ -36,11 +36,11 @@ export type Magic = {
     };
     range: boolean;
     allow?: string[];
-}
+};
 
 type MagicDataFile = {
     magics: Magic[];
-}
+};
 
 export function GetMagic(MaxMP: number, CharacterType: string) {
     const AttackMagic = JSON.parse(readFileSync('./magics/attack.json', 'utf-8')) as MagicDataFile;
